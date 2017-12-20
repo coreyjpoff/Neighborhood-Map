@@ -86,7 +86,7 @@ function addMarkerAnimation(marker) {
   marker.setAnimation(google.maps.Animation.BOUNCE);
   setTimeout(function() {
     marker.setAnimation(null);
-  }, 2130);
+  }, 2100);
 }
 
 // populates the marker's infowindow for when it is clicked
@@ -117,7 +117,9 @@ function getWikipediaContent(marker, infoWindow) {
     dataType: 'json',
     success: function (data, textStatus, jqXHR) {
       // on success, take out the extract and add to infoWindow
-      extract = data.query.pages[Object.keys(data.query.pages)[0]].extract;
+      if (data && data.query && data.query.pages) {
+        extract = data.query.pages[Object.keys(data.query.pages)[0]].extract;
+      }
       if (!extract) {
         extract = 'There does not seem to be a wiki page for ' + marker.title + '.'
       }
@@ -126,9 +128,11 @@ function getWikipediaContent(marker, infoWindow) {
       infoWindow.setContent('<div>' + marker.title + '</div></br>' +
         '<div>' + extract +
         '<p>Source: <a href=' + url + '>' + url +'</a></p></div>');
+        console.log(extract);
     },
-    error: function (errorMessage) {
-      extract = 'Error querying wikipedia.'
+    error: function (errorInfo) {
+      infoWindow.setContent('<div>' + marker.title + '</div></br>' +
+        '<div>Error querying Wikipedia.</div>');
     }
   });
 }

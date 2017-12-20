@@ -7,11 +7,6 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 </head>
 <body>
-  <script src="js/knockout-3.4.2.js" charset="UTF-8"></script>
-  <script src="js/jquery-3.2.1.min.js" charset="UTF-8"></script>
-  <script src="js/app.js" charset="UTF-8"></script>
-  <script src="js/locations.js" charset="UTF-8"></script>
-  <script async defer src="https://maps.googleapis.com/maps/api/js?libraries=places&key=AIzaSyBCo029AwEyjaEDVAR8uEDWycWOaGxj770&callback=initMap" onerror="handleGoogleMapError()" charset="UTF-8"></script>
   <div class="container">
     <div class="sidebar" data-bind="visible: menuIsShowing">
       <input class="search" placeholder="Filter locations..." data-bind="textInput: filterString">
@@ -29,4 +24,10 @@
       <img class="collapsedMenuIcon" caption="Toggle menu" src="./img/menu.png">
     </a>
   </div>
+	
+	<script src="js/knockout-3.4.2.js" charset="UTF-8"></script>
+  <script src="js/jquery-3.2.1.min.js" charset="UTF-8"></script>
+  <script src="js/app.js" charset="UTF-8"></script>
+  <script src="js/locations.js" charset="UTF-8"></script>
+  <script async defer src="https://maps.googleapis.com/maps/api/js?libraries=places&key=AIzaSyBCo029AwEyjaEDVAR8uEDWycWOaGxj770&callback=initMap" onerror="handleGoogleMapError()" charset="UTF-8"></script>
 </body>
