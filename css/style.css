@@ -1,0 +1,67 @@
+html,
+body {
+  background-color: #dfdfdf;
+  font-family: Arial, sans-serif;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+.container {
+  height: 100%;
+  position: relative;
+}
+
+.map {
+  bottom: 0;
+  height: 100%;
+  left: 200px;
+  position: absolute;
+  right: 0;
+  top: 0;
+}
+
+.search {
+  height: 25px;
+  margin: 3px;
+  padding: 0;
+  width: 140px;
+}
+
+.menuIcon {
+  position: absolute;
+  width: 35px;
+  padding: 0 5px;
+}
+
+.menuIcon:hover {
+  cursor: pointer;
+}
+
+.collapsedMenuIcon {
+  position: absolute;
+  width: 35px;
+  padding: 0 5px;
+  top: 0;
+}
+
+.collapsedMenuIcon:hover {
+  cursor: pointer;
+}
+
+.locationList {
+  list-style-type: none;
+  margin: 0;
+  max-width: 160px;
+  padding: 0 20px;
+}
+
+.place {
+  padding-top: 20px;
+  border-bottom: solid;
+}
+
+.place:hover {
+  cursor: pointer;
+  font-weight: bold;
+}

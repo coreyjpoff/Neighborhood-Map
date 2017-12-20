@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Lefferts Gardens Neighborhood Map</title>
+	<link rel="stylesheet" href="css/style.css">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+<body>
+  <script src="js/knockout-3.4.2.js" charset="UTF-8"></script>
+  <script src="js/jquery-3.2.1.min.js" charset="UTF-8"></script>
+  <script src="js/app.js" charset="UTF-8"></script>
+  <script src="js/locations.js" charset="UTF-8"></script>
+  <script async defer src="https://maps.googleapis.com/maps/api/js?libraries=places&key=AIzaSyBCo029AwEyjaEDVAR8uEDWycWOaGxj770&callback=initMap" onerror="handleGoogleMapError()" charset="UTF-8"></script>
+  <div class="container">
+    <div class="sidebar" data-bind="visible: menuIsShowing">
+      <input class="search" placeholder="Filter locations..." data-bind="textInput: filterString">
+      <a data-bind="click: toggleMenu">
+        <img class="menuIcon" caption="Toggle menu" src="./img/menu.png">
+      </a>
+      <ul class="locationList" data-bind="foreach: filteredLocations">
+        <li class="place" data-bind="text: title, click: updateMarkerOnListClick"></li>
+      </ul>
+    </div>
+    <div class="map" id="map">Map loading...</div>
+  </div>
+  <div class="collapsedSidebar" data-bind="visible: !menuIsShowing()">
+    <a data-bind="click: toggleMenu">
+      <img class="collapsedMenuIcon" caption="Toggle menu" src="./img/menu.png">
+    </a>
+  </div>
+</body>
